@@ -175,7 +175,6 @@ if odpow == '2':
     while suma > 0:
         try:
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
-            print(gra)
             if suma > 0:
                 wejscie = input('Gdzie wprowadzic "X"?: ')
                 wartosc = 'X'
