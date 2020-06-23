@@ -156,9 +156,6 @@ def logikakom2(x, y, z):
             zbior.append(l)
             break
 
-
-        print("swiatlo")
-
     return zbior
 ###########################################################
 if odpow == '2': 
