@@ -135,11 +135,30 @@ def logikakom2(x, y, z):
     przekotna1 = [gra[i][i] for i in range(3)]
     przekotna2 = [gra[i][2-i] for i in range(3)]
     wszy = [c,d,e]
-    if przekotna1.count(x) == 2 and przekotna1.count(y) == 1:
-        lic = przekotna1.index(x)
-        gra[lic][lic] = z
-        zbior.append(l)
+    for l, t in enumerate(wszy):
+        if przekotna1.count(x) == 2 and przekotna1.count(y) == 1:
+            lic = przekotna1.index(x)
+            gra[lic][lic] = z
+            zbior.append(l)
+        elif przekotna2.count(x) == 2 and przekotna2.count(y) == 1:
+            lic = przekotna2.index(x)
+            gra[lic][2-lic] = z
+            zbior.append(l)
+            break
+        elif gra[l].count(x) == 2 and gra[l].count(y) == 1:
+            lic = gra[l].index(x)
+            gra[l][lic] = z
+            zbior.append(l)
+            break
+        elif t.count(x) == 2 and t.count(y) ==1:
+            lic=t.index(x)
+            gra[lic][l] = z
+            zbior.append(l)
+            break
+
+
         print("swiatlo")
+
     return zbior
 ###########################################################
 if odpow == '2': 
