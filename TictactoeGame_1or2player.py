@@ -74,7 +74,7 @@ def checttt(gra):
 def tictactoe(wejscie, wartosc):
     """Funkcja pobierajaca dane od uzytkownika."""
     war = []
-    os.system('cls')
+    #os.system('cls')
     while len(war) == 0:
         wejscieint = [int(t) for t in wejscie]
         if  gra[wejscieint[0]][wejscieint[1]] == '…':
@@ -156,16 +156,27 @@ def logikakom2(x, y, z):
             zbior.append(l)
             break
 
+
+
     return zbior
 ###########################################################
+iksy = []
+kolka = []
+
 if odpow == '2': 
     while suma > 0:
         try:
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
+            
+            print(len(iksy) == len(kolka))
+            print(iksy,"iksy")
+            print(kolka, "kolka")
             if suma > 0:
-                wejscie = input('Gdzie wprowadzic "X"?: ')
-                wartosc = 'X'
-                tictactoe(wejscie, wartosc)
+                if len(iksy) == len(kolka):
+                    wejscie = input('Gdzie wprowadzic "X"?: ')
+                    wartosc = 'X'
+                    tictactoe(wejscie, wartosc)
+                    iksy.append(wejscie)
             if len(checttt(gra)) == 1:
                 print(checttt(gra))
                 break
@@ -174,14 +185,18 @@ if odpow == '2':
             tablica()
         try:    
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
-            if suma > 0:  
-                wejscie2 = input('Gdzie wprowadzic "O"?: ')
-                wartosc2 = 'O'
-            tictactoe(wejscie2, wartosc2)
+            if suma > 0: 
+                if len(iksy) > len(kolka): 
+                    wejscie2 = input('Gdzie wprowadzic "O"?: ')
+                    
+                    wartosc2 = 'O'
+                    tictactoe(wejscie2, wartosc2)
+                    kolka.append(wejscie2)
             if len(checttt(gra)) == 1:
                 print(checttt(gra))
                 break
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
+            print(len(iksy) == len(kolka), "drugie")
     
         except:
             print("Prosze wpisac dwie cyfry, zlozone z liczb od 0 do 2 np '01'")
