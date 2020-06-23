@@ -74,7 +74,7 @@ def checttt(gra):
 def tictactoe(wejscie, wartosc):
     """Funkcja pobierajaca dane od uzytkownika."""
     war = []
-    #os.system('cls')
+    os.system('cls')
     while len(war) == 0:
         wejscieint = [int(t) for t in wejscie]
         if  gra[wejscieint[0]][wejscieint[1]] == '…':
@@ -123,8 +123,6 @@ def logikakom(x, y, z):
             gra[lic][2-lic] = z
             zbior.append(l)
             break
-
-        
     return zbior
 """
 logika dla dwoch pustych miejs i jednego zajetego
@@ -137,39 +135,12 @@ def logikakom2(x, y, z):
     przekotna1 = [gra[i][i] for i in range(3)]
     przekotna2 = [gra[i][2-i] for i in range(3)]
     wszy = [c,d,e]
-
-    for l, t in enumerate(wszy):
-
-        
-        if gra[l].count(x) == 2 and gra[l].count(y) == 1:
-            lic = gra[l].index(x)
-            gra[l][lic] = z
-            zbior.append(l)
-            print("swiatlo")
-            break
-        elif t.count(x) == 2 and t.count(y) ==1:
-            lic=t.index(x)
-            gra[lic][l] = z
-            zbior.append(l)
-            print("swiatlo")
-            break
-        elif przekotna1.count(x) == 2 and przekotna1.count(y) == 1:
-            lic = przekotna1.index(x)
-            gra[lic][lic] = z
-            zbior.append(l)
-            print("swiatlo")
-            break
-        elif przekotna2.count(x) == 2 and przekotna2.count(y) == 1:
-            lic = przekotna2.index(x)
-            gra[lic][2-lic] = z
-            zbior.append(l)
-            print("swiatlo")
-            break
-        
-        
+    if przekotna1.count(x) == 2 and przekotna1.count(y) == 1:
+        lic = przekotna1.index(x)
+        gra[lic][lic] = z
+        zbior.append(l)
+        print("swiatlo")
     return zbior
-
-
 ###########################################################
 if odpow == '2': 
     while suma > 0:
@@ -233,6 +204,4 @@ else:
             print("Prosze wpisac dwie cyfry, zlozone z liczb od 0 do 2 np '01'")
             tablica()
 
-
 input('Koniec gry! Nacisnij Enter!')
-
