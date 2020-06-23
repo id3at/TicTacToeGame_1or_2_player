@@ -168,9 +168,6 @@ if odpow == '2':
         try:
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
             
-            print(len(iksy) == len(kolka))
-            print(iksy,"iksy")
-            print(kolka, "kolka")
             if suma > 0:
                 if len(iksy) == len(kolka):
                     wejscie = input('Gdzie wprowadzic "X"?: ')
@@ -196,7 +193,6 @@ if odpow == '2':
                 print(checttt(gra))
                 break
             suma = gra[0].count('…')+gra[1].count('…')+gra[2].count('…')
-            print(len(iksy) == len(kolka), "drugie")
     
         except:
             print("Prosze wpisac dwie cyfry, zlozone z liczb od 0 do 2 np '01'")
