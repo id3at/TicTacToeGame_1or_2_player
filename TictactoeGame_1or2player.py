@@ -140,6 +140,7 @@ def logikakom2(x, y, z):
             lic = przekotna1.index(x)
             gra[lic][lic] = z
             zbior.append(l)
+            break
         elif przekotna2.count(x) == 2 and przekotna2.count(y) == 1:
             lic = przekotna2.index(x)
             gra[lic][2-lic] = z
