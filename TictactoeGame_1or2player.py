@@ -23,6 +23,7 @@ kolka = []
 
 
 def tablica():
+    """ Funkcja wyświetla zmienną gra"""
 
     print('    0    1    2')
     for x, y in enumerate(gra):
@@ -30,8 +31,8 @@ def tablica():
 
 
 def checttt(gra):
+    """'Funkcja sprawdzajaca wygrana w grze."""
 
-    # 'Funkcja sprawdzajaca wygrana w grze.
     wyg = []
     for t in range(3):
         if gra[t].count('X') == 3:
@@ -53,8 +54,8 @@ def checttt(gra):
 
 
 def tictactoe(wejscie, wartosc):
+    """Funkcja pobierajaca dane od uzytkownika."""
 
-    # Funkcja pobierajaca dane od uzytkownika.
     war = []
     os.system('cls')
     while len(war) == 0:
@@ -70,8 +71,8 @@ def tictactoe(wejscie, wartosc):
 
 
 def logikakom(x, y, z):
+    """ Logika komputera gry w kolko krzyzyk"""
 
-    # logika komputera gry w kolko krzyzyk
     zbior = []
     c = [t[0] for t in gra]
     d = [t[1] for t in gra]
